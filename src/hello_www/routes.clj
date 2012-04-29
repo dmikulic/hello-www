@@ -1,13 +1,13 @@
 (ns hello-www.routes
   (:use compojure.core
+        hello-www.views
         [ring.adapter.jetty :only [run-jetty]])
   (:require [compojure.route :as route]
-            [compojure.handler :as handler])
-  (:use hello-www.views))
+            [compojure.handler :as handler]))
 
 
 (defroutes main-routes
-  (GET "/" [] (index-page))
+  (GET "/" [] (hello-www.views/index-page))
 
   ;;(GET "/user/uid-:id" [id] (get-id id))
   (GET ["/user/uid-:id" :id #"[0-9]+"] [id] (hello-www.views/get-id id))
