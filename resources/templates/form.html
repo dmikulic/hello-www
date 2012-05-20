@@ -18,12 +18,37 @@
     <script src="/static/bootstrap/js/bootstrap-collapse.js"></script>
     <script src="/static/bootstrap/js/bootstrap-carousel.js"></script>
     <script src="/static/bootstrap/js/bootstrap-typeahead.js"></script>
+    
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */ }
+    </style>
   </head>
   <body>
+      <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Clojure webapp</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/user/uid-1234">Example 1</a></li>
+                            <li><a href="/form/">Example 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>      
+      
     <div class="container">
         <br/>
         <form method="post" action="/form/">
-            What's your name?
+            What's your name? 
             <input type="text" name="name" />
             <input type="submit" />
         </form>
